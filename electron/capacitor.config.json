@@ -1,6 +1,6 @@
 {
   "appId": "com.birthdaybuddy.app",
   "appName": "Birthday Buddy",
-  "webDir": "app",
+  "webDir": "dist",
   "bundledWebRuntime": false
 }
