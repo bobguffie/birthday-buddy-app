@@ -41,21 +41,21 @@
  "build": {
     "appId": "com.birthdaybuddy.app",
     "productName": "Birthday Buddy",
+    "directories": {
+      "output": "dist"
+    },
     "win": {
-      "icon": "assets/logo.png",
-      "target": ["nsis"]
+      "target": ["nsis"],
+      "icon": "assets/logo.png"
     },
     "nsis": {
       "oneClick": false,
-      "allowToChangeInstallationDirectory": true
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true
     },
     "mac": {
-      "icon": "assets/logo.png",
-      "target": ["zip"]
-    },
-    "linux": {
-      "icon": "assets/logo.png",
-      "target": "AppImage"
+      "target": ["zip"],
+      "icon": "assets/logo.png"
     }
   }
 }
