@@ -1,6 +1,6 @@
 {
   "name": "birthday-buddy",
-  "version": "1.5.7",
+  "version": "1.5.8",
   "description": "Birthday Buddy",
   "main": "build/src/index.js",
   "author": "Bob Guffie",
@@ -9,8 +9,8 @@
     "type": "git",
     "url": "https://github.com/bobguffie/birthday-buddy-app.git"
   },
-  "scripts": {
-    "build": "tsc --skipLibCheck || (exit 0)",
+"scripts": {
+    "build": "tsc",
     "electron:start": "npm run build && electron .",
     "electron:pack": "electron-builder build --dir",
     "electron:make": "electron-builder build -p always"
