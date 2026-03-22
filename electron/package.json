@@ -1,6 +1,6 @@
 {
   "name": "birthday-buddy",
-  "version": "1.4.4",
+  "version": "1.4.5",
   "description": "Birthday Buddy",
   "main": "build/src/index.js",
   "author": "Bob Guffie",
@@ -35,6 +35,8 @@
     "files": [
       "build/src/**/*.js",
       "package.json",
+      "capacitor.config.json",
+      "capacitor.config.ts",
       "app/**/*",
       "assets/**/*"
     ],
