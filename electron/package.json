@@ -1,6 +1,6 @@
 {
   "name": "birthday-buddy",
-  "version": "1.4.5",
+  "version": "1.4.7",
   "description": "Birthday Buddy",
   "main": "build/src/index.js",
   "author": "Bob Guffie",
