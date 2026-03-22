@@ -1,13 +1,12 @@
 name: Build Desktop Versions
 on:
   push:
-    branches:
-      - main
+    tags:
+      - 'v*'
 
 jobs:
   release:
     runs-on: ${{ matrix.os }}
-
     strategy:
       matrix:
         os: [windows-latest, macos-latest, ubuntu-latest]
@@ -19,7 +18,7 @@ jobs:
       - name: Install Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22  # Updated to meet your package requirements
 
       - name: Install Dependencies
         run: npm install
@@ -27,10 +26,12 @@ jobs:
       - name: Build Web Project
         run: npm run build
 
-      # This assumes you have Electron set up. 
-      # If not, we will need to add 'capacitor-community/electron' next.
       - name: Build Desktop App
         uses: samuelmeuli/action-electron-builder@v1
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
+          # Points the builder to the electron folder
+          package_root: "electron" 
           release: true
+          # This bypasses the "npx canceled" error
+          args: "--config electron-builder.config.json"
