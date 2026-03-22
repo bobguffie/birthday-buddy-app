@@ -1,6 +1,6 @@
 {
   "name": "birthday-buddy",
-  "version": "1.4.2",
+  "version": "1.4.4",
   "description": "Birthday Buddy",
   "main": "build/src/index.js",
   "author": "Bob Guffie",
@@ -42,7 +42,10 @@
       "target": ["nsis"]
     },
     "mac": {
-      "target": ["zip"]
+      "target": ["zip"],
+      "icon": "assets/logo.png",
+      "identity": null,
+      "gatekeeperAssess": false
     },
     "linux": {
       "target": ["AppImage"]
