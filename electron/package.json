@@ -47,7 +47,7 @@
       "target": ["zip"],
       "icon": "assets/logo.png",
       "identity": null,
-      "gatekeeperAssess": false
+      "gatekeeperAssess": false,
       "hardenedRuntime": false
     },
     "linux": {
