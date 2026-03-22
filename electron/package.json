@@ -48,6 +48,7 @@
       "icon": "assets/logo.png",
       "identity": null,
       "gatekeeperAssess": false
+      "hardenedRuntime": false
     },
     "linux": {
       "target": ["AppImage"]
