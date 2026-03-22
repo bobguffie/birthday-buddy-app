@@ -37,5 +37,19 @@
   "keywords": [
     "capacitor",
     "electron"
-  ]
+  ],
+  "build": {
+    "appId": "com.birthdaybuddy.app",
+    "productName": "Birthday Buddy",
+    "win": {
+      "icon": "assets/logo.png"
+    },
+    "mac": {
+      "icon": "assets/logo.png"
+    },
+    "linux": {
+      "icon": "assets/logo.png",
+      "target": "AppImage"
+    }
+  }
 }
