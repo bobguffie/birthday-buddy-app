@@ -64,6 +64,8 @@ app.on('activate', async function () {
   // dock icon is clicked and there are no other windows open.
   if (myCapacitorApp.getMainWindow().isDestroyed()) {
     await myCapacitorApp.init();
+  // ADD THIS LINE TEMPORARILY:
+  myCapacitorApp.getMainWindow().webContents.openDevTools();
   }
 });
 
