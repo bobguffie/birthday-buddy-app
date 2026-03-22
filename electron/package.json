@@ -1,6 +1,6 @@
 {
   "name": "birthday-buddy",
-  "version": "1.3.0",
+  "version": "1.3.1",
   "description": "Birthday Buddy Desktop App",
   "main": "src/index.js",
   "author": "Bob Guffie",
@@ -61,3 +61,4 @@
       "icon": "assets/logo.png"
     }
   }
+}
