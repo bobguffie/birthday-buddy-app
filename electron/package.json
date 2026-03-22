@@ -2,7 +2,7 @@
   "name": "birthday-buddy",
   "version": "1.2.0",
   "description": "Birthday Buddy Desktop App",
-  "main": "index.js",
+  "main": "src/index.js",
   "author": "Bob Guffie",
   "license": "MIT",
   "repository": {
