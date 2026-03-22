@@ -32,6 +32,8 @@
   "build": {
     "appId": "com.birthdaybuddy.app",
     "productName": "Birthday Buddy",
+    "extraResources": [
+      "capacitor.config.ts"
     "files": [
       "build/src/**/*.js",
       "package.json",
