@@ -1,0 +1,34 @@
+{
+  "entities": {
+    "GiftClick": {
+      "title": "Gift Click Analytics",
+      "description": "Anonymous data for gift link clicks",
+      "type": "object",
+      "properties": {
+        "keyword": {
+          "type": "string",
+          "description": "The search term used for the gift"
+        },
+        "timestamp": {
+          "type": "number",
+          "description": "When the click occurred"
+        },
+        "personCategory": {
+          "type": "string",
+          "description": "The category of the person (Family, Friend, Work)"
+        },
+        "appVersion": {
+          "type": "string",
+          "description": "The version of the app"
+        }
+      },
+      "required": ["keyword", "timestamp", "personCategory", "appVersion"]
+    }
+  },
+  "firestore": {
+    "/giftClicks/{clickId}": {
+      "schema": "GiftClick",
+      "description": "Collection of anonymous gift click analytics"
+    }
+  }
+}

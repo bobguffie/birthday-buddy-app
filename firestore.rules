@@ -1,0 +1,55 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // ===============================================================
+    // Assumed Data Model
+    // ===============================================================
+    //
+    // Collection: giftClicks
+    // Document ID: {clickId}
+    // Fields:
+    //   - keyword: string (required) - The search term used for the gift
+    //   - timestamp: number (required) - When the click occurred
+    //   - personCategory: string (required) - The category of the person (Family, Friend, Work)
+    //   - appVersion: string (required) - The version of the app
+    //
+    // ===============================================================
+
+    // ===============================================================
+    // Helper Functions
+    // ===============================================================
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+
+    function isAdmin() {
+      return isAuthenticated() &&
+        (get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'admin' ||
+          (request.auth.token.email == "bobguffie@gmail.com" && request.auth.token.email_verified == true));
+    }
+
+    function isValidGiftClick(data) {
+      return data.keys().hasAll(['keyword', 'timestamp', 'personCategory', 'appVersion']) &&
+             data.keyword is string && data.keyword.size() < 200 &&
+             data.timestamp is number &&
+             data.personCategory is string && data.personCategory in ['Family', 'Friend', 'Work', 'Other'] &&
+             data.appVersion is string && data.appVersion.size() < 20;
+    }
+
+    // ===============================================================
+    // Rules
+    // ===============================================================
+
+    // Allow anyone to create a gift click (anonymous analytics)
+    match /giftClicks/{clickId} {
+      allow create: if isValidGiftClick(request.resource.data);
+      allow read: if isAdmin(); // Only admin can read analytics
+      allow update, delete: if false; // Analytics are immutable
+    }
+
+    // Default deny
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

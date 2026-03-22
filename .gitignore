@@ -1,0 +1,16 @@
+node_modules/
+# Android specific
+*.jks
+*.keystore
+*.apk
+*.aab
+google-services.json
+
+# IDEs
+.idea/
+.vscode/
+*.swp
+
+# Capacitor/Cordova
+www/
+capacitor.config.json.user
