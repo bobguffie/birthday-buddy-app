@@ -34,13 +34,13 @@
     "appId": "com.birthdaybuddy.app",
     "productName": "Birthday Buddy",
     "directories": {
-      "output": "dist",
-      "buildResources": "assets"
+      "output": "dist"
     },
     "files": [
-      "src/**/*",
-      "app/**/*",
-      "assets/**/*",
+      "**/*",
+      "!node_modules/*",
+      "!dist/*",
+      "!src/**/*.ts",
       "package.json"
     ],
     "win": {
@@ -61,4 +61,3 @@
       "icon": "assets/logo.png"
     }
   }
-}
