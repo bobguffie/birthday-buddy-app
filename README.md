@@ -1,3 +1,4 @@
+![Birthday Buddy Banner](assets/feature-graphic.png)
 # Birthday Buddy 🎈
 
 Never forget a birthday again. Smart reminders + gift suggestions with Amazon integration.
