@@ -38,3 +38,5 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           package_root: "electron"
           release: true
+        env:
+          CSC_IDENTITY_AUTO_DISCOVERY: false

@@ -1,16 +1,17 @@
-import type { CapacitorConfig } from '@capacitor/cli';
+import { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
   appId: 'com.birthdaybuddy.app',
   appName: 'Birthday Buddy',
-  webDir: 'dist',
-  plugins: {
-    LocalNotifications: {
-      smallIcon: "ic_stat_icon_config_sample",
-      iconColor: "#488AFF",
-      sound: "beep.wav",
-    },
+  webDir: 'dist', // Vite builds to here
+  server: {
+    androidScheme: 'https'
   },
+  electron: {
+    // This matches the error 'capacitor-electron://'
+    customUrlScheme: 'birthday-buddy', 
+    splashScreenEnabled: false
+  }
 };
 
 export default config;
